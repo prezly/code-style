@@ -1,0 +1,11 @@
+{
+    "name": "prezly/code-style",
+    "type": "library",
+    "description": "Code style for prezly projects",
+    "license": "MIT",
+    "require": {
+      "squizlabs/php_codesniffer": "~3.0.0RC1"
+    },
+    "require-dev": {},
+    "autoload": {}
+}
