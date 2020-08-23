@@ -4,6 +4,7 @@
     "description": "Prezly Code style configurations",
     "license": "MIT",
     "require": {
+        "php": ">=7.1"
     },
     "require-dev": {
         "symplify/easy-coding-standard": "^8.2"
