@@ -6,11 +6,16 @@ PHP Code Style checker (and fixer) is built with
 
 ### Usage
 
-1. Link prezly/code-style repo as composer dependency
+1. Add ECS CLI took into your composer requirements
+   (either `symplify/easy-coding-standard`
+   or `symplify/easy-coding-standard-prefixed`
+   if you don't want to struggle with its dependency hell).
+
+2. Link prezly/code-style repo as composer dependency
 
     `$ composer require prezly/code-style:~3.0`
 
-2. Include the provided configuration into your project.
+3. Include the provided configuration into your project.
 
    Simply create an *ecs.php* file in your project root 
    and include the *ecs.php* provided by this package into it.
@@ -22,7 +27,7 @@ PHP Code Style checker (and fixer) is built with
    return require __DIR__ . '/vendor/prezly/code-style/ecs.php';
    ```
 
-3. If you need to extend or override the stock configuration, 
+4. If you need to extend or override the stock configuration, 
    you can of course do it by adding code on top of it:
    
    ```php
@@ -49,3 +54,15 @@ PHP Code Style checker (and fixer) is built with
        ]);
    };
    ```
+
+5. Run checks (you can also configure your CI to run this for you on every push):
+
+   ```bash
+   vendor/bin/ecs check src/
+   ```
+
+6. Fix problems:
+
+   ```bash
+   vendor/bin/ecs check src/ --fix
+   ``` 
