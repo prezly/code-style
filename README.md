@@ -1,32 +1,51 @@
 Prezly code style configurations
 ================================
 
-
-PHP Code Sniffer
-----------------
-
-Configuration file: *prezly.phpcs.xml*
+PHP Code Style checker (and fixer) is built with 
+[Easy-Coding-Standard](https://github.com/symplify/easy-coding-standard).
 
 ### Usage
 
 1. Link prezly/code-style repo as composer dependency
 
-    `$ composer require prezly/code-style:~1.0`
+    `$ composer require prezly/code-style:~3.0`
 
-2. Extend provided configuration to adapt it to your project.  
-   Example ([phpcs.xml](https://github.com/prezly/draft-php/blob/master/phpcs.xml) config from prezly/draft-php repo):
+2. Include the provided configuration into your project.
+
+   Simply create an *ecs.php* file in your project root 
+   and include the *ecs.php* provided by this package into it.
    
-   ``` xml
-    <?xml version="1.0" encoding="UTF-8"?>
-    <ruleset name="Draft-PHP project code style checker config">
-        <rule ref="./vendor/prezly/code-style/prezly.phpcs.xml">
-            <exclude name="PSR2.Classes.PropertyDeclaration.Underscore"/>
-        </rule>
-        <rule ref="PSR1.Classes.ClassDeclaration">
-            <exclude-pattern>*/_stubs.php</exclude-pattern>
-        </rule>
-        <rule ref="Generic.CodeAnalysis.UnconditionalIfStatement.Found">
-            <exclude-pattern>*/_stubs.php</exclude-pattern>
-        </rule>
-    </ruleset>
-    ```
+   ```php
+   <?php
+    
+   // Include the stock prezly/code-style config as is.
+   return require __DIR__ . '/vendor/prezly/code-style/ecs.php';
+   ```
+
+3. If you need to extend or override the stock configuration, 
+   you can of course do it by adding code on top of it:
+   
+   ```php
+   <?php
+   
+   declare(strict_types=1);
+   
+   use PhpCsFixer\Fixer\Operator\BinaryOperatorSpacesFixer;
+   use Symfony\Component\DependencyInjection\Loader\Configurator\ContainerConfigurator;
+   
+   return static function (ContainerConfigurator $config): void {
+       // Include the stock prezly/code-style config.
+       (require __DIR__ . '/vendor/prezly/code-style/ecs.php')($config);
+   
+       $services = $config->services();
+   
+       // Override stock preset configuration.
+       $services->set(BinaryOperatorSpacesFixer::class)->call('configure', [
+           [
+               'operators' => [
+                   '=>' => 'align',
+               ],
+           ],
+       ]);
+   };
+   ```
