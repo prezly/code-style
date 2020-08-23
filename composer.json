@@ -4,8 +4,9 @@
     "description": "Prezly Code style configurations",
     "license": "MIT",
     "require": {
-      "squizlabs/php_codesniffer": "3.*"
     },
-    "require-dev": {},
+    "require-dev": {
+        "symplify/easy-coding-standard": "^8.2"
+    },
     "autoload": {}
 }
