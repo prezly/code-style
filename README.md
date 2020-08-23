@@ -6,10 +6,13 @@ PHP Code Style checker (and fixer) is built with
 
 ### Usage
 
-1. Add ECS CLI took into your composer requirements
-   (either `symplify/easy-coding-standard`
-   or `symplify/easy-coding-standard-prefixed`
-   if you don't want to struggle with its dependency hell).
+1. (Optional) Add prefixed ECS CLI tool into your composer requirements
+   (if you're not a fan of resolving conflicts with enormous dependencies
+   list of `simplify/easy-coding-standard`).
+ 
+   ```bash
+   composer require --dev simplify/easy-coding-standard-prefixed
+   ```
 
 2. Link prezly/code-style repo as composer dependency
 
