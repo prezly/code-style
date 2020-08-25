@@ -11,7 +11,7 @@ PHP Code Style checker (and fixer) is built with
    list of `simplify/easy-coding-standard`).
  
    ```bash
-   composer require --dev simplify/easy-coding-standard-prefixed
+   composer require --dev symplify/easy-coding-standard-prefixed
    ```
 
 2. Link prezly/code-style repo as composer dependency
