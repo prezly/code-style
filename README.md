@@ -16,7 +16,9 @@ PHP Code Style checker (and fixer) is built with
 
 2. Link prezly/code-style repo as composer dependency
 
-    `$ composer require prezly/code-style:~3.0`
+   ```bash
+   composer require prezly/code-style:~3.0
+   ```
 
 3. Include the provided configuration into your project.
 
