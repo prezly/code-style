@@ -10,7 +10,9 @@
         "./lib/react": "./lib/react.js",
         "./react": "./lib/react.js",
         "./lib/stylelint": "./lib/stylelint.js",
-        "./stylelint": "./lib/stylelint.js"
+        "./stylelint": "./lib/stylelint.js",
+        "./lib/nextjs": "./lib/nextjs.js",
+        "./nextjs": "./lib/nextjs.js"
     },
     "files": [
         "lib"
@@ -37,6 +39,7 @@
         "eslint": "^8.8.0",
         "eslint-config-airbnb-base": "^15.0.0",
         "eslint-config-airbnb-typescript": "^16.1.0",
+        "eslint-config-next": "^12.0.10",
         "eslint-config-prettier": "^8.3.0",
         "eslint-import-resolver-typescript": "^2.5.0",
         "eslint-plugin-import": "^2.25.4",
