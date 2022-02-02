@@ -8,7 +8,9 @@
         "./lib/prettier": "./lib/prettier.js",
         "./prettier": "./lib/prettier.js",
         "./lib/react": "./lib/react.js",
-        "./react": "./lib/react.js"
+        "./react": "./lib/react.js",
+        "./lib/stylelint": "./lib/stylelint.js",
+        "./stylelint": "./lib/stylelint.js"
     },
     "files": [
         "lib"
@@ -43,7 +45,11 @@
         "eslint-plugin-react": "^7.28.0",
         "eslint-plugin-react-hooks": "^4.3.0",
         "eslint-plugin-sort-export-all": "^1.2.1",
-        "prettier": "^2.5.1"
+        "prettier": "^2.5.1",
+        "stylelint": "^14.3.0",
+        "stylelint-config-prettier": "^9.0.3",
+        "stylelint-config-sass-guidelines": "^9.0.1",
+        "stylelint-config-standard": "^24.0.0"
     },
     "publishConfig": {
         "access": "public"
