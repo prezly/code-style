@@ -2,3 +2,6 @@ vendor/
 .idea/
 /composer.lock
 /composer.phar
+
+.vscode/
+node_modules/
