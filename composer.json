@@ -5,9 +5,7 @@
     "license": "MIT",
     "require": {
         "php": ">=7.1",
-        "symplify/easy-coding-standard": "^9.2"
-    },
-    "require-dev": {
+        "symplify/easy-coding-standard": "^11.1"
     },
     "autoload": {}
 }
