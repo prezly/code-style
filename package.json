@@ -1,6 +1,6 @@
 {
     "name": "@prezly/eslint-config",
-    "version": "4.3.0",
+    "version": "4.3.1",
     "description": "ESLint, Prettier and StyleLint configs used for Prezly TypeScript projects",
     "main": "lib/index.js",
     "exports": {
