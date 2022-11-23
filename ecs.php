@@ -140,6 +140,6 @@ return static function (ECSConfig $config) use ($psr12, $cleanCode, $php71): voi
     ]);
 
     $config->ruleWithConfiguration(HeredocIndentationFixer::class, [
-        'indentation' => 'same_as_start',
+        'indentation' => 'start_plus_one',
     ]);
 };
