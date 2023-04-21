@@ -12,7 +12,9 @@
         "./lib/stylelint": "./lib/stylelint.js",
         "./stylelint": "./lib/stylelint.js",
         "./lib/nextjs": "./lib/nextjs.js",
-        "./nextjs": "./lib/nextjs.js"
+        "./nextjs": "./lib/nextjs.js",
+        "./lib/nextjs-tailwind": "./lib/nextjs-tailwind.js",
+        "./nextjs-tailwind": "./lib/nextjs-tailwind.js"
     },
     "files": [
         "lib"
