@@ -49,13 +49,13 @@
         "eslint-plugin-react": "^7.33.2",
         "eslint-plugin-react-hooks": "^4.6.0",
         "eslint-plugin-sort-export-all": "^1.4.1",
-        "stylelint-config-standard-scss": "^11.1.0"
+        "stylelint-config-standard-scss": "^13.0.0"
     },
     "peerDependencies": {
         "eslint": "^8",
         "eslint-config-next": "^13 || ^14",
         "prettier": "^2 || ^3",
-        "stylelint": "^15.10.0"
+        "stylelint": "^16.2.0"
     },
     "peerDependenciesMeta": {
         "eslint-config-next": {
@@ -66,10 +66,10 @@
         "access": "public"
     },
     "devDependencies": {
-        "eslint": "^8.55.0",
-        "eslint-config-next": "^14.0.4",
+        "eslint": "^8.56.0",
+        "eslint-config-next": "^14.1.0",
         "np": "^7.7.0",
-        "prettier": "^3.1.1",
-        "stylelint": "^15.11.0"
+        "prettier": "^3.2.5",
+        "stylelint": "^16.2.1"
     }
 }
