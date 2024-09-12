@@ -55,7 +55,9 @@
         "eslint": "^8",
         "eslint-config-next": "^13 || ^14",
         "prettier": "^2 || ^3",
-        "stylelint": "^16.2.0"
+        "stylelint": "^16.2.0",
+        "eslint-plugin-react": "^7.36.0",
+        "eslint-plugin-react-hooks": "^4.5.0"
     },
     "peerDependenciesMeta": {
         "eslint-config-next": {
