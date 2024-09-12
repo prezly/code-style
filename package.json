@@ -53,7 +53,7 @@
     },
     "peerDependencies": {
         "eslint": "^8",
-        "eslint-config-next": "^13 || ^14",
+        "eslint-config-next": "^13 || ^14 || 15 || rc",
         "prettier": "^2 || ^3",
         "stylelint": "^16.2.0",
         "eslint-plugin-react": "^7.36.0",
