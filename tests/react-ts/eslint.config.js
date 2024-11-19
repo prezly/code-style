@@ -1,3 +1,8 @@
 import config from "../../lib/react.js";
 
-export default config;
+export default [
+    ...config,
+    {
+        ignores: ["eslint.config.js"],
+    },
+];
