@@ -26,6 +26,7 @@ jobs:
               run: pnpm install
 
             - name: Run ESLint (Expecting failure)
+              continue-on-error: true
               run: |
                   cd tests/react-ts
                   pnpm lint
