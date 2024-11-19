@@ -18,6 +18,9 @@ jobs:
 
             - name: Setup environment
               uses: prezly/setup-github-actions@v1
+              with:
+                  pnpm: 9.7.0
+                  node: 20
 
             - name: Install dependencies
               run: pnpm install
