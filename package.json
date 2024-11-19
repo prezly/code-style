@@ -20,7 +20,7 @@
         "lib"
     ],
     "scripts": {
-        "test": "echo \"Tests? maybe next time ;)\" && exit 0",
+        "test": "vitest",
         "release": "np --no-release-draft",
         "release:preview": "np prerelease --any-branch --no-release-draft --tag=preview"
     },
@@ -70,7 +70,7 @@
     "devDependencies": {
         "@types/eslint": "^9.6.1",
         "@types/node": "^22.9.0",
-        "eslint": "^8.56.0",
+        "eslint": "^9.15.0",
         "eslint-config-next": "^14.1.0",
         "np": "^7.7.0",
         "prettier": "^3.2.5",
