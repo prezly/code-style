@@ -66,6 +66,9 @@ importers:
       '@types/eslint':
         specifier: ^9.6.1
         version: 9.6.1
+      '@types/eslint-config-prettier':
+        specifier: ^6.11.3
+        version: 6.11.3
       '@types/eslint-plugin-jsx-a11y':
         specifier: ^6.9.0
         version: 6.9.0
@@ -246,6 +249,9 @@ packages:
         optional: true
       zen-observable:
         optional: true
+
+  '@types/eslint-config-prettier@6.11.3':
+    resolution: {integrity: sha512-3wXCiM8croUnhg9LdtZUJQwNcQYGWxxdOWDjPe1ykCqJFPVpzAKfs/2dgSoCtAvdPeaponcWPI7mPcGGp9dkKQ==}
 
   '@types/eslint-plugin-jsx-a11y@6.9.0':
     resolution: {integrity: sha512-5nw0sPyYGCsFibwjOXftxends8Nrh/JLgDtBWj6aJVcN14kHwy1yIy0o1MGLKfCcR27pvUFGgYG+hX2HSX16uA==}
@@ -2609,6 +2615,8 @@ snapshots:
       rxjs: 6.6.7
     transitivePeerDependencies:
       - zenObservable
+
+  '@types/eslint-config-prettier@6.11.3': {}
 
   '@types/eslint-plugin-jsx-a11y@6.9.0':
     dependencies:
