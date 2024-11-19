@@ -1,0 +1,34 @@
+name: ESLint Smoke Test
+
+on:
+    push:
+        branches:
+            - main
+    pull_request:
+        branches:
+            - main
+
+jobs:
+    lint:
+        runs-on: ubuntu-latest
+
+        steps:
+            - name: Checkout the repository
+              uses: actions/checkout@v4
+
+            - name: Setup environment
+              uses: prezly/setup-github-actions@v1
+
+            - name: Install dependencies
+              run: pnpm install
+
+            - name: Run ESLint
+              run: |
+                  cd tests/react-ts
+                  pnpm lint
+                  if [ $? -eq 0 ]; then
+                    echo "ESLint passed, which is unexpected. Marking this as a failure."
+                    exit 1
+                  else
+                    echo "ESLint failed, which is expected. Marking this as a success."
+                  fi
