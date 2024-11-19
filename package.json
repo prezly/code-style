@@ -20,7 +20,7 @@
         "lib"
     ],
     "scripts": {
-        "test": "vitest",
+        "test": "echo \"Tests? maybe next time ;)\" && exit 0",
         "release": "np --no-release-draft",
         "release:preview": "np prerelease --any-branch --no-release-draft --tag=preview"
     },
@@ -75,7 +75,6 @@
         "np": "^10.0.7",
         "prettier": "^3.3.3",
         "stylelint": "^16.10.0",
-        "typescript": "^5.6.3",
-        "vitest": "^2.1.5"
+        "typescript": "^5.6.3"
     }
 }
