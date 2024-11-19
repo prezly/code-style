@@ -1,2 +1,3 @@
 packages:
-    - "tests/react-ts"
+    - "tests/should-pass"
+    - "tests/should-fail"

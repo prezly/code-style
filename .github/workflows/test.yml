@@ -1,4 +1,4 @@
-name: ESLint Smoke Test
+name: Smoke Test
 
 on:
     push:
@@ -25,24 +25,46 @@ jobs:
             - name: Install dependencies
               run: pnpm install
 
-            - name: Run ESLint
-              id: eslint
+            - name: Run ESLint on should-fail
+              id: eslint_should_fail
               run: |
-                  cd tests/react-ts
+                  cd tests/should-fail
                   pnpm lint
                   lint_exit_code=$?
-                  echo "The exit code of pnpm lint is: $lint_exit_code"
+                  echo "The exit code of pnpm lint for should-fail is: $lint_exit_code"
                   echo "lint_exit_code=$lint_exit_code" >> $GITHUB_ENV
-              continue-on-error: true # Allow failure but capture exit code
+              continue-on-error: true
 
-            - name: Evaluate ESLint result
+            - name: Evaluate ESLint result for should-fail
               run: |
                   if [ "$lint_exit_code" -eq 0 ]; then
-                      echo "ESLint passed unexpectedly. Marking this as a failure."
+                      echo "ESLint for should-fail passed unexpectedly. Marking this as a failure."
                       exit 1
                   else
-                      echo "ESLint failed as expected. Marking this as a success."
+                      echo "ESLint for should-fail failed as expected. Marking this as a success."
                       exit 0
+                  fi
+              env:
+                  lint_exit_code: ${{ env.lint_exit_code }}
+
+            - name: Run ESLint on should-pass
+              id: eslint_should_pass
+              run: |
+                  cd tests/should-pass
+                  pnpm lint
+                  lint_exit_code=$?
+                  echo "The exit code of pnpm lint for should-pass is: $lint_exit_code"
+                  echo "lint_exit_code=$lint_exit_code" >> $GITHUB_ENV
+              continue-on-error: true
+
+            - name: Evaluate ESLint result for should-pass
+              run: |
+                  if [ "$lint_exit_code" -eq 0 ]; then
+                      echo "ESLint for should-pass passed as expected. Marking this as a success."
+                      exit 0
+                  else
+                      echo "ESLint for should-pass failed unexpectedly. Marking this as a failure."
+                      exit 1
                   fi
               env:
                   lint_exit_code: ${{ env.lint_exit_code }}
