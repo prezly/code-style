@@ -1,0 +1,70 @@
+name: Smoke Test
+
+on:
+    push:
+        branches:
+            - main
+    pull_request:
+        branches:
+            - main
+
+jobs:
+    test:
+        runs-on: ubuntu-latest
+
+        steps:
+            - name: Checkout the repository
+              uses: actions/checkout@v4
+
+            - name: Setup environment
+              uses: prezly/setup-github-actions@v1
+              with:
+                  pnpm: 9.7.0
+                  node: 20
+
+            - name: Install dependencies
+              run: pnpm install
+
+            - name: Run ESLint on should-fail
+              id: eslint_should_fail
+              run: |
+                  cd tests/should-fail
+                  pnpm lint
+                  lint_exit_code=$?
+                  echo "The exit code of pnpm lint for should-fail is: $lint_exit_code"
+                  echo "lint_exit_code=$lint_exit_code" >> $GITHUB_ENV
+              continue-on-error: true
+
+            - name: Evaluate ESLint result for should-fail
+              run: |
+                  if [ -n "$lint_exit_code" ]; then
+                      echo "ESLint for should-fail passed unexpectedly. Marking this as a failure."
+                      exit 1
+                  else
+                      echo "ESLint for should-fail failed as expected. Marking this as a success."
+                      exit 0
+                  fi
+              env:
+                  lint_exit_code: ${{ env.lint_exit_code }}
+
+            - name: Run ESLint on should-pass
+              id: eslint_should_pass
+              run: |
+                  cd tests/should-pass
+                  pnpm lint
+                  lint_exit_code=$?
+                  echo "The exit code of pnpm lint for should-pass is: $lint_exit_code"
+                  echo "lint_exit_code=$lint_exit_code" >> $GITHUB_ENV
+              continue-on-error: true
+
+            - name: Evaluate ESLint result for should-pass
+              run: |
+                  if [ "$lint_exit_code" -eq 0 ]; then
+                      echo "ESLint for should-pass passed as expected. Marking this as a success."
+                      exit 0
+                  else
+                      echo "ESLint for should-pass failed unexpectedly. Marking this as a failure."
+                      exit 1
+                  fi
+              env:
+                  lint_exit_code: ${{ env.lint_exit_code }}
