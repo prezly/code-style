@@ -37,7 +37,7 @@ jobs:
 
             - name: Evaluate ESLint result for should-fail
               run: |
-                  if [ "$lint_exit_code" -eq 0 ]; then
+                  if [ -n "$lint_exit_code" ]; then
                       echo "ESLint for should-fail passed unexpectedly. Marking this as a failure."
                       exit 1
                   else
