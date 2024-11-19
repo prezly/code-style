@@ -52,7 +52,7 @@
         "stylelint-config-standard-scss": "^13.1.0"
     },
     "peerDependencies": {
-        "eslint": "^8",
+        "eslint": "^9",
         "eslint-config-next": "^13 || ^14 || ^15 || rc",
         "eslint-plugin-react": "^7.36.0",
         "eslint-plugin-react-hooks": "^4.5.0 || ^5",
