@@ -25,18 +25,24 @@ jobs:
             - name: Install dependencies
               run: pnpm install
 
-            - name: Run ESLint (Expecting failure)
-              continue-on-error: true
+            - name: Run ESLint
+              id: eslint
               run: |
                   cd tests/react-ts
                   pnpm lint
                   lint_exit_code=$?
                   echo "The exit code of pnpm lint is: $lint_exit_code"
+                  echo "lint_exit_code=$lint_exit_code" >> $GITHUB_ENV
+              continue-on-error: true # Allow failure but capture exit code
 
-                  if [ $lint_exit_code -eq 0 ]; then
-                      echo "ESLint passed, which is unexpected. Marking this as a failure."
+            - name: Evaluate ESLint result
+              run: |
+                  if [ "$lint_exit_code" -eq 0 ]; then
+                      echo "ESLint passed unexpectedly. Marking this as a failure."
                       exit 1
                   else
-                      echo "ESLint failed, which is expected. Marking this as a success."
+                      echo "ESLint failed as expected. Marking this as a success."
                       exit 0
                   fi
+              env:
+                  lint_exit_code: ${{ env.lint_exit_code }}
