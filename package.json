@@ -1,16 +1,16 @@
 {
     "name": "@prezly/eslint-config",
-    "version": "5.4.5",
+    "version": "5.4.6-10",
     "description": "ESLint, Prettier and StyleLint configs used for Prezly TypeScript projects",
     "main": "lib/index.js",
     "exports": {
         ".": "./lib/index.js",
-        "./lib/prettier": "./lib/prettier.js",
-        "./prettier": "./lib/prettier.js",
+        "./lib/prettier": "./lib/prettier.cjs",
+        "./prettier": "./lib/prettier.cjs",
         "./lib/react": "./lib/react.js",
         "./react": "./lib/react.js",
-        "./lib/stylelint": "./lib/stylelint.js",
-        "./stylelint": "./lib/stylelint.js",
+        "./lib/stylelint": "./lib/stylelint.cjs",
+        "./stylelint": "./lib/stylelint.cjs",
         "./lib/nextjs": "./lib/nextjs.js",
         "./nextjs": "./lib/nextjs.js",
         "./lib/nextjs-tailwind": "./lib/nextjs-tailwind.js",
@@ -31,33 +31,38 @@
     "keywords": [],
     "author": "",
     "license": "MIT",
+    "type": "module",
     "bugs": {
         "url": "https://github.com/prezly/code-style/issues"
     },
     "homepage": "https://github.com/prezly/code-style#readme",
     "dependencies": {
-        "@typescript-eslint/eslint-plugin": "^6.14.0",
-        "@typescript-eslint/parser": "^6.14.0",
+        "@eslint/compat": "^1.2.3",
+        "@eslint/js": "^9.13.0",
+        "@typescript-eslint/eslint-plugin": "^8.15.0",
+        "@typescript-eslint/parser": "^8.15.0",
         "eslint-config-airbnb-base": "^15.0.0",
-        "eslint-config-airbnb-typescript": "^17.1.0",
+        "eslint-config-airbnb-typescript": "^18.0.0",
         "eslint-config-prettier": "^9.1.0",
-        "eslint-import-resolver-typescript": "^3.6.1",
-        "eslint-plugin-deprecation": "^2.0.0",
-        "eslint-plugin-import": "^2.29.0",
-        "eslint-plugin-jsx-a11y": "^6.8.0",
-        "eslint-plugin-prettier": "^5.0.1",
-        "eslint-plugin-react": "^7.33.2",
-        "eslint-plugin-react-hooks": "^4.5.0",
+        "eslint-import-resolver-typescript": "^3.6.3",
+        "eslint-plugin-import": "^2.31.0",
+        "eslint-plugin-jsx-a11y": "^6.10.2",
+        "eslint-plugin-prettier": "^5.2.1",
+        "eslint-plugin-react": "^7.37.2",
+        "eslint-plugin-react-hooks": "^5.0.0",
+        "eslint-plugin-react-refresh": "^0.4.14",
         "eslint-plugin-sort-export-all": "^1.4.1",
-        "stylelint-config-standard-scss": "^13.0.0"
+        "globals": "^15.11.0",
+        "stylelint-config-standard-scss": "^13.1.0",
+        "typescript-eslint": "^8.11.0"
     },
     "peerDependencies": {
-        "eslint": "^8",
+        "eslint": "^9",
         "eslint-config-next": "^13 || ^14 || ^15 || rc",
-        "prettier": "^2 || ^3",
-        "stylelint": "^16.2.0",
         "eslint-plugin-react": "^7.36.0",
-        "eslint-plugin-react-hooks": "^4.5.0 || ^5"
+        "eslint-plugin-react-hooks": "^4.5.0 || ^5",
+        "prettier": "^2 || ^3",
+        "stylelint": "^16.2.0"
     },
     "peerDependenciesMeta": {
         "eslint-config-next": {
@@ -68,10 +73,15 @@
         "access": "public"
     },
     "devDependencies": {
-        "eslint": "^8.56.0",
-        "eslint-config-next": "^14.1.0",
-        "np": "^7.7.0",
-        "prettier": "^3.2.5",
-        "stylelint": "^16.2.1"
+        "@types/eslint": "^9.6.1",
+        "@types/eslint-config-prettier": "^6.11.3",
+        "@types/eslint-plugin-jsx-a11y": "^6.9.0",
+        "@types/node": "^22.9.0",
+        "eslint": "^9.15.0",
+        "eslint-config-next": "^15.0.3",
+        "np": "^10.0.7",
+        "prettier": "^3.3.3",
+        "stylelint": "^16.10.0",
+        "typescript": "^5.6.3"
     }
 }
